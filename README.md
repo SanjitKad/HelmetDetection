@@ -16,8 +16,14 @@ Next to deal with the annotations, the images had to be labelled with bounding b
 Another technique that was used to increase the speed of annotations was active learning, where the model was trained on the initial set of annotated images and the predictions from this model were then checked, corrected and then added to the set of annotated images as well. This increased the speed of the annotations even more. 
 
 ## Stage 2 : Object Detection : Detection of bikes with riders of all orientations and distances from camera
+The object detection phase of this project deals with detecting all bike riders in the images. Initially, this phase was tried with the detection of both legal and illegal riders but as the images from th two classes are extremely similar, this prved to be ineffective. 
+
+The object detection was done using the pre-trained YOLO v-5 model.The results after the detector was trained are shown in the results section.
 
 ## Stage 3 : Image Classification : Classification of the detected bikes into legal and non-legal
+The annotated boundong boxes were cropped and the detectors predictions were labelled and cropped too, to make up the training set for the classifier. A range of networks were tested, ranging from EfficientNets to shallow convolutional neural networks. In the end, a form of convolutional neural network was able to give out the best results which are diplayed in the section below. 
+
+If the system needs to be applied in the real world, then assuming that the number plates of all the non-legal riders would have to be read, only the detected rider images that are fairly large would have to be classified. This would make it much easier for the classifier to differentiate between the two classes. 
 
 ## Results : 
 
