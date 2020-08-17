@@ -29,14 +29,14 @@ If the system needs to be applied in the real world, then assuming that the numb
 
 ### Examples of some of the raw images from the dataset :
 ![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Input_Images/0000016_leftImg8bit.jpg)
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Input_Images/0000213_leftImg8bit.jpg)
 
+### Examples of some of the labelled images :
+![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Annotated_Images/i1.jpg)
+![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Annotated_Images/i2.jpg)
 
-
-### Examples of some 
+### Examples of some of the cropped riders :
+![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Cropped_riders/0004979_leftImg8bit32.jpg) ![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Cropped_riders/0004980_leftImg8bit39.jpg)
 
 
 ## Future Work :
