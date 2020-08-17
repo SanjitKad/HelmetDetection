@@ -27,7 +27,12 @@ If the system needs to be applied in the real world, then assuming that the numb
 
 ## Results : 
 
-Examples of some of the images from the dataset:
+### Examples of some of the raw images from the dataset :
+![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Input_Images/0000016_leftImg8bit.jpg)
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 
 
