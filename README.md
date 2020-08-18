@@ -45,15 +45,21 @@ The final (and best) epoch of the training of the YOLOv5 model has been shown be
 From here it can be seen that the mAP is around 83% and the recall is about 85%. This is inclusive of a GIOU estimate and can be increased further by having more training datapoints of real images to optimize the bounding box predictions.
 
 ### Confusion Matrix of classification :
-The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set:
+The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set. This gives us a precision, recall and F1 score of about 75%.
+
 |                        | True Postivies            | True Negatives  |
 | ---------------------- |:-------------------------:| ---------------:|
 | *Predicted Positive*   | 39                        | 14              |
 | *Predicted Negative*   | 10                        | 31              |
 
+However, these images consist of bikers/riders that are really far away from the camera. They are in fact so far away that it would be difficukt even for a human to make an accurate prediction manually. Hence, the test set was trimmed down to contain images where the bikers and the license plates would be clearly visible (in this case, dimensions larger than 300 pixels). In this case, the classification algorithm producded a much better output with a precision and recall of over 95%. This could be improved even further by training on more real world data specific to the region under consideration. 
 
 
 
 
 ## Future Work :
+
+..* Capturing and framing of videos from the cities in question so as to best suit the rules and regulations of the region. For example, the images used here are from Hyderabad where the rule regarding helemts for pillions was not enforced strictly. This would be different in the case of Bangalore and would need data that is local to each city/region.
+
+..* To work on more unsupervised/semi-supervised techniques to annotate data as this would be the slowest and more laborious part of the pipeline that could definitely be made faster and of better quality. 
 
