@@ -39,7 +39,18 @@ If the system needs to be applied in the real world, then assuming that the numb
 ![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Cropped_riders/0004979_leftImg8bit32.jpg) ![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Cropped_riders/0004980_leftImg8bit39.jpg)![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Cropped_riders/0005016_leftImg8bit49.jpg) ![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Cropped_riders/0005037_leftImg8bit53.jpg) ![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Cropped_riders/0005915_leftImg8bit182.jpg)
 
 ### Object Detection results :
-The final epoch oh training of the YOLOv5 model has been shown below : 
+The final (and best) epoch of the training of the YOLOv5 model has been shown below : 
+![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Training%20results/Train_epoch.jpg)
+
+From here it can be seen that the mAP is around 83% and the recall is about 85%. This is inclusive of a GIOU estimate and can be increased further by having more training datapoints of real images to optimize the bounding box predictions.
+
+### Confusion Matrix of classification :
+The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set:
+|                     | True Postivies            | True Negatives  |
+| ------------------- |:-------------------------:| ---------------:|
+| *Predicted Positive*| 39                        | 14              |
+| *Predicted Negative*| 10                        | 31              |
+
 
 
 
