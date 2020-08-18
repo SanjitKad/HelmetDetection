@@ -59,7 +59,7 @@ However, these images consist of bikers/riders that are really far away from the
 
 ## Future Work :
 
-..* Capturing and framing of videos from the cities in question so as to best suit the rules and regulations of the region. For example, the images used here are from Hyderabad where the rule regarding helemts for pillions was not enforced strictly. This would be different in the case of Bangalore and would need data that is local to each city/region.
+..*Capturing and framing of videos from the cities in question so as to best suit the rules and regulations of the region. For example, the images used here are from Hyderabad where the rule regarding helemts for pillions was not enforced strictly. This would be different in the case of Bangalore and would need data that is local to each city/region.
 
-..* To work on more unsupervised/semi-supervised techniques to annotate data as this would be the slowest and more laborious part of the pipeline that could definitely be made faster and of better quality. 
+..*To work on more unsupervised/semi-supervised techniques to annotate data as this would be the slowest and more laborious part of the pipeline that could definitely be made faster and of better quality. 
 
