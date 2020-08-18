@@ -46,10 +46,10 @@ From here it can be seen that the mAP is around 83% and the recall is about 85%.
 
 ### Confusion Matrix of classification :
 The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set:
-|                     | True Postivies            | True Negatives  |
-| ------------------- |:-------------------------:| ---------------:|
-| *Predicted Positive*| 39                        | 14              |
-| *Predicted Negative*| 10                        | 31              |
+|                        | True Postivies            | True Negatives  |
+| ---------------------- |:-------------------------:| ---------------:|
+| ####Predicted Positive | 39                        | 14              |
+| ####Predicted Negative | 10                        | 31              |
 
 
 
