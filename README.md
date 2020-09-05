@@ -45,14 +45,15 @@ The final (and best) epoch of the training of the YOLOv5 model has been shown be
 From here it can be seen that the mAP is around 83% and the recall is about 85%. This is inclusive of a GIOU estimate and can be increased further by having more training datapoints of real images to optimize the bounding box predictions.
 
 ### Confusion Matrix of classification :
-The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set. This gives us a precision, recall and F1 score of about 75%.
+The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set. This gives us a precision, recall and F1 score of about 75%. The main goal here would be to reduce the TN-PP amount and increase the TP-PP amount as those would be the important ones under consideration for further action. 
+
 
 |                        | True Postivies            | True Negatives  |
 | ---------------------- |:-------------------------:| ---------------:|
-| *Predicted Positive*   | 39                        | 14              |
-| *Predicted Negative*   | 10                        | 31              |
+| *Predicted Positive*   | 07                        | 02              |
+| *Predicted Negative*   | 10                        | 22              |
 
-However, these images consist of bikers/riders that are really far away from the camera. They are in fact so far away that it would be difficukt even for a human to make an accurate prediction manually. Hence, the test set was trimmed down to contain images where the bikers and the license plates would be clearly visible (in this case, dimensions larger than 300 pixels). In this case, the classification algorithm producded a much better output with a precision and recall of over 95%. This could be improved even further by training on more real world data specific to the region under consideration. 
+However, these images consist of bikers/riders that are really far away from the camera as well. They are in fact so far away that it would be difficult even for a human to make an accurate prediction manually. Hence, the test set was trimmed down to contain images where the bikers and the license plates would be clearly visible (in this case, dimensions larger than 300 pixels). In this case, the classification algorithm producded a much better output with a precision and recall of over 95%. This could be improved even further by training on more real world data specific to the region under consideration. 
 
 
 
