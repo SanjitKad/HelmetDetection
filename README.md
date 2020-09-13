@@ -1,4 +1,8 @@
 # HelmetDetection
+# The Problem Statement
+
+The main problem statement being dealt with in this project is the detection of non-legal motorcyclists on Indian roads. This is being implemented as an  object detection and 
+recognition algorithm from frames that have been captured off a video that is taken in traffic. This video could either be taken from a POV camera (for example in a police car) or from a roadside mounted camera and should work for both cases.
 
 # Stages of the project
 
@@ -10,18 +14,18 @@
 To start off with, as far as I am aware, there was no good annotated dataset for this problem statement. An initial dataset with dashcam images from Hyderabad and Bangalore was found and used from [here](https://www.kaggle.com/manjotpahwa/indian-driving-dataset).
 
 
-Next, to deal with the annotations, the images had to be labelled with bounding boxes around legal and non-legal riders. [This](https://www.makesense.ai/) website was used for an initial set of annotations. Along with this, images where there were no overlapping bike riders could have their bounding boxes drawn around them using Image segmentation. The bounding boxes would then just have to be annotated to the right class. This is one of the techniques that are used to speed up the annotation process pretty drastically, esoecially considering how long it takes to manually draw bounding boxes.
+Next, to deal with the annotations, the images had to be labelled with bounding boxes around legal and non-legal riders. [This](https://www.makesense.ai/) website was used for an initial set of annotations. Along with this, images where there were no overlapping bike riders could have their bounding boxes drawn around them using Image segmentation. The bounding boxes would then just have to be annotated to the right class. This is one of the techniques that are used to speed up the annotation process pretty drastically, especially considering how long it takes to manually draw bounding boxes.
 
 
 Another technique that was used to increase the speed of annotations was active learning, where the model was trained on the initial set of annotated images and the predictions from this model were then checked, corrected and then added to the set of annotated images as well. This increased the speed of the annotations even more. 
 
 ## Stage 2 : Object Detection : Detection of bikes with riders of all orientations and distances from camera
-The object detection phase of this project deals with detecting all bike riders in the images. Initially, this phase was tried with the detection of both legal and illegal riders but as the images from th two classes are extremely similar, this prved to be ineffective. 
+The object detection phase of this project deals with detecting all bike riders in the images. Initially, this phase was tried with the detection of both legal and illegal riders seperately but as the images from th two classes are extremely similar, this proved to be ineffective. 
 
-The object detection was done using the pre-trained YOLO v-5 model.The results after the detector was trained are shown in the results section.
+The object detection was done using transfer learning on the pre-trained YOLO v-5 model.The results after the detector was trained are shown in the results section.
 
 ## Stage 3 : Image Classification : Classification of the detected bikes into legal and non-legal
-The annotated boundong boxes were cropped and the detectors predictions were labelled and cropped too, to make up the training set for the classifier (A drastic improvement can be made to performane by altering this step slightly and using the results from the object detection as the training xamples rather than the hand annotated images as the sizes of the boxes don't really match up perfectly). A range of networks were tested, ranging from EfficientNets to shallow convolutional neural networks. In the end, a form of convolutional neural network was able to give out the best results which are diplayed in the section below. 
+The annotated boundong boxes were cropped to make up the training set for the classifier (A drastic improvement can be made to performance by altering this step slightly and using the results from the object detection as the training samples rather than the hand annotated images as the sizes of the boxes don't really match up perfectly). A range of networks were tested, ranging from EfficientNets to shallow convolutional neural networks. In the end, a form of shallow convolutional neural network was able to give out the best results which are diplayed in the section below. 
 
 If the system needs to be applied in the real world, then assuming that the number plates of all the non-legal riders would have to be read, only the detected rider images that are fairly large would have to be classified. This would make it much easier for the classifier to differentiate between the two classes. 
 
@@ -42,10 +46,10 @@ If the system needs to be applied in the real world, then assuming that the numb
 The final (and best) epoch of the training of the YOLOv5 model has been shown below : 
 ![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Training%20results/Train_epoch.jpg)
 
-From here it can be seen that the mAP is around 83% and the recall is about 85%. This is inclusive of a GIOU estimate and can be increased further by having more training datapoints of real images to optimize the bounding box predictions.
+From here it can be seen that the mAP is around 83% and the recall is about 85%. This is inclusive of a GIOU estimate and can be increased further by having more training datapoints of real images to optimize the bounding box predictions. A larger amount of training data would really help the model in dealing with edge cases for example, parked motorcycles by the side of the road with people still on them and so on.
 
 ### Confusion Matrix of classification :
-The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set. This gives us a precision, recall and F1 score of about 75%. The main goal here would be to reduce the True Legal -Predicted Non legal amount and increase the Treu Nonlegal-Predicted Non legal amount as those would be the important ones under consideration for further action (the predicted legal set is not going to be considered anyways.). 
+The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set. This gives us a precision, recall and F1 score of about 75%. (The results can be seen in the Full_Classifier.ipynb notebook) The main goal here would be to reduce the True Legal -Predicted Non legal amount and increase the Treu Nonlegal-Predicted Non legal amount as those would be the important ones under consideration for further action (the predicted legal set is not going to be considered anyways). 
 
 
 |                         | True Non Legal            | True Legal      |
@@ -61,7 +65,7 @@ However, these images consist of bikers/riders that are really far away from the
 
 ## Future Work :
 
-1. Capturing and framing of videos from the cities in question so as to best suit the rules and regulations of the region. For example, the images used here are from Hyderabad where the rule regarding helemts for pillions was not enforced strictly. This would be different in the case of Bangalore and would need data that is local to each city/region.
+1. Capturing and framing of videos from the cities in question so as to best suit the rules and regulations of the region. For example, the images used here are from Hyderabad when the rule regarding helmets for pillions was not enforced strictly. This would be different in the case of Bangalore and would need data that is local to each city/region.
 
 2. To work on more unsupervised/semi-supervised techniques to annotate data as this would be the slowest and more laborious part of the pipeline that could definitely be made faster and of better quality. 
 
