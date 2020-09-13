@@ -2,7 +2,7 @@
 # The Problem Statement
 
 The main problem statement being dealt with in this project is the detection of non-legal motorcyclists on Indian roads. This is being implemented as an  object detection and 
-recognition algorithm from frames that have been captured off a video that is taken in traffic. This video could either be taken from a POV camera (for example in a polica car) or from a roadside mounted camera and should work for both cases.
+recognition algorithm from frames that have been captured off a video that is taken in traffic. This video could either be taken from a POV camera (for example in a police car) or from a roadside mounted camera and should work for both cases.
 
 # Stages of the project
 
