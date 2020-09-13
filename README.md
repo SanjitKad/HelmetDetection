@@ -1,4 +1,8 @@
 # HelmetDetection
+# The Problem Statement
+
+The main problem statement being dealt with in this project is the detection of non-legal motorcyclists on Indian roads. This is being implemented as an  object detection and 
+recognition algorithm from frames that have been captured off a video that is taken in traffic. This video could either be taken from a POV camera (for example in a polica car) or from a roadside mounted camera and should work for both cases.
 
 # Stages of the project
 
@@ -42,10 +46,10 @@ If the system needs to be applied in the real world, then assuming that the numb
 The final (and best) epoch of the training of the YOLOv5 model has been shown below : 
 ![alt text](https://github.com/SanjitKad/HelmetDetection/blob/master/Images/Training%20results/Train_epoch.jpg)
 
-From here it can be seen that the mAP is around 83% and the recall is about 85%. This is inclusive of a GIOU estimate and can be increased further by having more training datapoints of real images to optimize the bounding box predictions.
+From here it can be seen that the mAP is around 83% and the recall is about 85%. This is inclusive of a GIOU estimate and can be increased further by having more training datapoints of real images to optimize the bounding box predictions. A larger amount of training data would really help the model in dealing with edge cases for example, parked motorcycles by the side of the road with people still on them and so on.
 
 ### Confusion Matrix of classification :
-The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set. This gives us a precision, recall and F1 score of about 75%. The main goal here would be to reduce the True Legal -Predicted Non legal amount and increase the Treu Nonlegal-Predicted Non legal amount as those would be the important ones under consideration for further action (the predicted legal set is not going to be considered anyways.). 
+The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set. This gives us a precision, recall and F1 score of about 75%. (The results can be seen in the Full_Classifier.ipynb notebook) The main goal here would be to reduce the True Legal -Predicted Non legal amount and increase the Treu Nonlegal-Predicted Non legal amount as those would be the important ones under consideration for further action (the predicted legal set is not going to be considered anyways). 
 
 
 |                         | True Non Legal            | True Legal      |
@@ -61,7 +65,7 @@ However, these images consist of bikers/riders that are really far away from the
 
 ## Future Work :
 
-1. Capturing and framing of videos from the cities in question so as to best suit the rules and regulations of the region. For example, the images used here are from Hyderabad where the rule regarding helemts for pillions was not enforced strictly. This would be different in the case of Bangalore and would need data that is local to each city/region.
+1. Capturing and framing of videos from the cities in question so as to best suit the rules and regulations of the region. For example, the images used here are from Hyderabad when the rule regarding helmets for pillions was not enforced strictly. This would be different in the case of Bangalore and would need data that is local to each city/region.
 
 2. To work on more unsupervised/semi-supervised techniques to annotate data as this would be the slowest and more laborious part of the pipeline that could definitely be made faster and of better quality. 
 
