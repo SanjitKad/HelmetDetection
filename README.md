@@ -22,10 +22,10 @@ Another technique that was used to increase the speed of annotations was active 
 ## Stage 2 : Object Detection : Detection of bikes with riders of all orientations and distances from camera
 The object detection phase of this project deals with detecting all bike riders in the images. Initially, this phase was tried with the detection of both legal and illegal riders seperately but as the images from th two classes are extremely similar, this proved to be ineffective. 
 
-The object detection was done using the pre-trained YOLO v-5 model.The results after the detector was trained are shown in the results section.
+The object detection was done using transfer learning on the pre-trained YOLO v-5 model.The results after the detector was trained are shown in the results section.
 
 ## Stage 3 : Image Classification : Classification of the detected bikes into legal and non-legal
-The annotated boundong boxes were cropped and the detectors predictions were labelled and cropped too, to make up the training set for the classifier (A drastic improvement can be made to performane by altering this step slightly and using the results from the object detection as the training xamples rather than the hand annotated images as the sizes of the boxes don't really match up perfectly). A range of networks were tested, ranging from EfficientNets to shallow convolutional neural networks. In the end, a form of convolutional neural network was able to give out the best results which are diplayed in the section below. 
+The annotated boundong boxes were cropped to make up the training set for the classifier (A drastic improvement can be made to performance by altering this step slightly and using the results from the object detection as the training samples rather than the hand annotated images as the sizes of the boxes don't really match up perfectly). A range of networks were tested, ranging from EfficientNets to shallow convolutional neural networks. In the end, a form of shallow convolutional neural network was able to give out the best results which are diplayed in the section below. 
 
 If the system needs to be applied in the real world, then assuming that the number plates of all the non-legal riders would have to be read, only the detected rider images that are fairly large would have to be classified. This would make it much easier for the classifier to differentiate between the two classes. 
 
