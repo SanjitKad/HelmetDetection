@@ -49,7 +49,7 @@ The final (and best) epoch of the training of the YOLOv5 model has been shown be
 From here it can be seen that the mAP is around 83% and the recall is about 85%. This is inclusive of a GIOU estimate and can be increased further by having more training datapoints of real images to optimize the bounding box predictions. A larger amount of training data would really help the model in dealing with edge cases for example, parked motorcycles by the side of the road with people still on them and so on.
 
 ### Confusion Matrix of classification :
-The confusion matrix of the general image classification (Cropped detected images of all sizes) produced the following confusion matrix on a test set. This gives us a precision, recall and F1 score of about 75%. (The results can be seen in the Full_Classifier.ipynb notebook) The main goal here would be to reduce the True Legal -Predicted Non legal amount and increase the Treu Nonlegal-Predicted Non legal amount as those would be the important ones under consideration for further action (the predicted legal set is not going to be considered anyways). 
+The confusion matrix of the general image classification (Cropped detected images of all sizes in the "Test" folder) produced the following confusion matrix on a test set. This gives us a precision, recall and F1 score of about 75%. (The results can be seen in the Full_Classifier.ipynb notebook) The main goal here would be to reduce the True Legal -Predicted Non legal amount and increase the Treu Nonlegal-Predicted Non legal amount as those would be the important ones under consideration for further action (the predicted legal set is not going to be considered anyways). 
 
 
 |                         | True Non Legal            | True Legal      |
